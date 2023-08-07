@@ -11,6 +11,7 @@
 		71DBACCE2A81282900EB9197 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DBACCD2A81282900EB9197 /* ContentView.swift */; };
 		71DBACD02A81282B00EB9197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71DBACCF2A81282B00EB9197 /* Assets.xcassets */; };
 		71DBACD42A81282B00EB9197 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71DBACD32A81282B00EB9197 /* Preview Assets.xcassets */; };
+		71DBACDB2A812AE700EB9197 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DBACDA2A812AE700EB9197 /* GameLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		71DBACCF2A81282B00EB9197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71DBACD12A81282B00EB9197 /* wordle_clone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wordle_clone.entitlements; sourceTree = "<group>"; };
 		71DBACD32A81282B00EB9197 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		71DBACDA2A812AE700EB9197 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				71DBACCF2A81282B00EB9197 /* Assets.xcassets */,
 				71DBACD12A81282B00EB9197 /* wordle_clone.entitlements */,
 				71DBACD22A81282B00EB9197 /* Preview Content */,
+				71DBACDA2A812AE700EB9197 /* GameLogic.swift */,
 			);
 			path = wordle_clone;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71DBACDB2A812AE700EB9197 /* GameLogic.swift in Sources */,
 				71DBACCE2A81282900EB9197 /* ContentView.swift in Sources */,
 				71DBACCC2A81282900EB9197 /* wordle_cloneApp.swift in Sources */,
 			);
