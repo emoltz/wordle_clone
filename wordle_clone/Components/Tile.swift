@@ -3,7 +3,7 @@ import SwiftUI
 
 
 struct Tile: View{
-    var tileColor:Color = Color("TileColor")
+    var tileColor:Color
     @Binding var character: String
     @State private var isEditing: Bool = false
     
@@ -16,6 +16,7 @@ struct Tile: View{
             Text(character)
                 .font(.system(size:40))
                 .foregroundColor(.white)
+                .fontWeight(.bold)
         }
         .onTapGesture {
             isEditing.toggle()
@@ -27,6 +28,6 @@ struct Tile: View{
 
 struct Tile_Preview: PreviewProvider {
     static var previews: some View {
-        Tile(character: .constant("T"))
+        Tile(tileColor: Color("TileColor"), character: .constant("W"))
     }
 }

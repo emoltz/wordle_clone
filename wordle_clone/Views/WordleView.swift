@@ -3,7 +3,7 @@ import SwiftUI
 struct WordleView: View{
    
     var body: some View {
-        Text("Hello world")
+        GridView()
     }
 }
 
