@@ -4,11 +4,12 @@ struct WordleView: View{
    
     var body: some View {
         VStack{
-            GridView()
+            GameBoardView()
                 .padding()
             Spacer()
             Text("Keyboard here")
         }
+        .padding()
         
         
     }
