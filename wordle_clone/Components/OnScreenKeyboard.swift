@@ -7,6 +7,7 @@ struct OnScreenKeyboard: View {
         ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
         ["Z", "X", "C", "V", "B", "N", "M"]
     ]
+    @Binding var currentInput: String
     
     var body: some View {
         ZStack {
@@ -18,7 +19,8 @@ struct OnScreenKeyboard: View {
                     HStack(spacing: 10){
                         ForEach(row, id: \.self){ character in
                             Button(action: {
-    //                            input.append(character)
+                                currentInput = character
+//                                print(currentInput)
                             }){
                                 Text(character)
                                     .font(.title)
@@ -38,6 +40,6 @@ struct OnScreenKeyboard: View {
 
 struct OnScreenKeyboard_Previews: PreviewProvider {
     static var previews: some View {
-        OnScreenKeyboard()
+        OnScreenKeyboard(currentInput: .constant("W"))
     }
 }

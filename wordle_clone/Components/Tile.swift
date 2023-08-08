@@ -11,7 +11,7 @@ struct Tile: View{
         ZStack {
             Rectangle()
                 .foregroundColor(tileColor)
-                .frame(width: 70,height: 70)
+                .frame(width: 65,height: 65)
                 .cornerRadius(10)
             Text(character)
                 .font(.system(size:40))
