@@ -11,7 +11,7 @@ struct OnScreenKeyboard: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(.gray)
+                .foregroundColor(Color("TileColor"))
                 .frame(width:.infinity, height: 150)
             VStack(spacing:10){
                 ForEach(rows, id: \.self) {row in
@@ -24,7 +24,7 @@ struct OnScreenKeyboard: View {
                                     .font(.title)
                                     .foregroundColor(.white)
                                     .frame(minWidth:10, maxWidth:30)
-                                    .background(Color.gray)
+                                    .background(Color("TileColor"))
                                     .cornerRadius(5)
                             }
                             

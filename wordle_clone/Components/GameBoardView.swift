@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GameBoardView: View {
-    @State private var characters: [String] = Array(repeating: "W", count: 25)
+    @State private var characters: [String] = Array(repeating: "", count: 25)
     var body: some View {
         let columns = Array(repeating: GridItem(.flexible()), count: 5)
         
