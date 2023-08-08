@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  wordle_clone
-//
-//  Created by Ethan Shafran Moltz on 8/7/23.
-//
-
 import SwiftUI
 
 struct ContentView: View {

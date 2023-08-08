@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71CFEDC92A81E15D0033EAD3 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CFEDC82A81E15D0033EAD3 /* Tile.swift */; };
 		71DBACCC2A81282900EB9197 /* wordle_cloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DBACCB2A81282900EB9197 /* wordle_cloneApp.swift */; };
 		71DBACCE2A81282900EB9197 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DBACCD2A81282900EB9197 /* ContentView.swift */; };
 		71DBACD02A81282B00EB9197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71DBACCF2A81282B00EB9197 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71CFEDC82A81E15D0033EAD3 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		71DBACC82A81282900EB9197 /* wordle_clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wordle_clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71DBACCB2A81282900EB9197 /* wordle_cloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordle_cloneApp.swift; sourceTree = "<group>"; };
 		71DBACCD2A81282900EB9197 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 		71CFEDC62A81E1180033EAD3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				71CFEDC82A81E15D0033EAD3 /* Tile.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71CFEDC92A81E15D0033EAD3 /* Tile.swift in Sources */,
 				71DBACDB2A812AE700EB9197 /* GameLogic.swift in Sources */,
 				71DBACCE2A81282900EB9197 /* ContentView.swift in Sources */,
 				71DBACCC2A81282900EB9197 /* wordle_cloneApp.swift in Sources */,
@@ -310,9 +314,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -346,9 +352,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
