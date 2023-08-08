@@ -7,7 +7,7 @@ struct WordleView: View{
     var body: some View {
         
         VStack{
-            GameBoardView()
+            GameBoardView(characters: $characters)
                 .padding()
             Spacer()
             OnScreenKeyboard(currentInput: $currentInput)

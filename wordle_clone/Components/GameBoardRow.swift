@@ -1,7 +1,14 @@
+//
+//  GameBoardRow.swift
+//  wordle_clone
+//
+//  Created by Ethan Shafran Moltz on 8/8/23.
+//
+
 import SwiftUI
 
-struct GameBoardView: View {
-    @State private var characters: [String] = Array(repeating: "", count: 25)
+struct GameBoardRow: View {
+    @Binding var characters: [String]
     var body: some View {
         let columns = Array(repeating: GridItem(.flexible()), count: 5)
         
@@ -10,12 +17,11 @@ struct GameBoardView: View {
                 Tile(tileColor: Color("TileColor"), character: $characters[index])
             }
         }
-        
     }
 }
 
-struct GridView_Previews: PreviewProvider {
+struct GameBoardRow_Previews: PreviewProvider {
     static var previews: some View {
-        GameBoardView()
+        GameBoardRow(characters: .constant(["W", "O", "R", "D", "S"]))
     }
 }
