@@ -7,9 +7,9 @@ struct WordleView: View{
             GameBoardView()
                 .padding()
             Spacer()
-            Text("Keyboard here")
+            OnScreenKeyboard()
         }
-        .padding()
+        
         
         
     }

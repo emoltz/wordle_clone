@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		71CFEDC92A81E15D0033EAD3 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CFEDC82A81E15D0033EAD3 /* Tile.swift */; };
 		71CFEDCB2A82861D0033EAD3 /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CFEDCA2A82861D0033EAD3 /* GameBoardView.swift */; };
+		71CFEDCD2A828CDE0033EAD3 /* OnScreenKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CFEDCC2A828CDE0033EAD3 /* OnScreenKeyboard.swift */; };
 		71DBACCC2A81282900EB9197 /* wordle_cloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DBACCB2A81282900EB9197 /* wordle_cloneApp.swift */; };
 		71DBACCE2A81282900EB9197 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DBACCD2A81282900EB9197 /* ContentView.swift */; };
 		71DBACD02A81282B00EB9197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71DBACCF2A81282B00EB9197 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		71CFEDC82A81E15D0033EAD3 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		71CFEDCA2A82861D0033EAD3 /* GameBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
+		71CFEDCC2A828CDE0033EAD3 /* OnScreenKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnScreenKeyboard.swift; sourceTree = "<group>"; };
 		71DBACC82A81282900EB9197 /* wordle_clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wordle_clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71DBACCB2A81282900EB9197 /* wordle_cloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordle_cloneApp.swift; sourceTree = "<group>"; };
 		71DBACCD2A81282900EB9197 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			children = (
 				71CFEDC82A81E15D0033EAD3 /* Tile.swift */,
 				71CFEDCA2A82861D0033EAD3 /* GameBoardView.swift */,
+				71CFEDCC2A828CDE0033EAD3 /* OnScreenKeyboard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				71CFEDC92A81E15D0033EAD3 /* Tile.swift in Sources */,
 				71DBACDB2A812AE700EB9197 /* GameLogic.swift in Sources */,
+				71CFEDCD2A828CDE0033EAD3 /* OnScreenKeyboard.swift in Sources */,
 				71DBACCE2A81282900EB9197 /* ContentView.swift in Sources */,
 				71DBACCC2A81282900EB9197 /* wordle_cloneApp.swift in Sources */,
 				71CFEDCB2A82861D0033EAD3 /* GameBoardView.swift in Sources */,
