@@ -1,18 +1,18 @@
 import SwiftUI
 
 struct GridView: View {
-    @State private var characters: [String] = Array(repeating: "", count: 9)
+    @State private var characters: [String] = Array(repeating: "W", count: 25)
     var body: some View {
         VStack {
-            ForEach(0..<3) { row in
+            ForEach(0..<5) { row in
                 HStack {
-                    ForEach(0..<3) { column in
-                        Tile(tileColor: Color("TileColor"), character: $characters[row * 3 + column])
+                    ForEach(0..<5) { column in
+                        Tile(tileColor: Color("TileColor"), character: $characters[row * 5 + column])
                     }
                 }
             }
         }
-        Text("Hello")
+        
     }
 }
 
