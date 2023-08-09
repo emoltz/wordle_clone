@@ -14,7 +14,8 @@ struct OnScreenKeyboard: View {
         ZStack {
             Rectangle()
                 .foregroundColor(Color("TileColor"))
-                .frame(width:.infinity, height: 150)
+                .frame(height: 150)
+                .clipped()
             VStack(spacing:10){
                 ForEach(rows.indices, id: \.self) { rowIndex in
                     HStack(spacing: 10){
@@ -48,7 +49,9 @@ struct OnScreenKeyboard: View {
                     }
                 }
             }
+            
         }
+        
     }
 }
 

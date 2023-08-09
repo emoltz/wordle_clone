@@ -5,6 +5,7 @@ struct WordleView: View{
     @State private var currentRow: Int = 0
     @State private var rows: [[String]] = Array(repeating: Array(repeating: "", count: 5), count: 5)
     @ObservedObject var game = WordleGame()
+    @State private var guessResult: [Character] = []
     
     var body: some View {
         
@@ -37,20 +38,13 @@ struct WordleView: View{
         
     }
     
-    private func processInput(_ input: String) {
-            guard currentRow < rows.count, let index = rows[currentRow].firstIndex(where: { $0.isEmpty }) else {
-                print("no more room!")
-                return
-            }
-            rows[currentRow][index] = input
-            print("Characters: \(rows[currentRow])")
-            
-            currentInput = ""
-        }
-    
+   
     private func enterGuess(){
         let guessWord = rows[currentRow].joined()
         let guessResult = game.guess(word: guessWord)
+        
+        // TODO: if the guess is wrong, wipe it clean
+        
         // use guessResult to update UI
         print("Guessed: \(guessWord), Result: \(guessResult)")
         
@@ -61,6 +55,17 @@ struct WordleView: View{
             currentRow += 1
         }
     }
+    
+    private func processInput(_ input: String) {
+               guard currentRow < rows.count, let index = rows[currentRow].firstIndex(where: { $0.isEmpty }) else {
+                   print("no more room!")
+                   return
+               }
+               rows[currentRow][index] = input
+               print("Characters: \(rows[currentRow])")
+               
+               currentInput = ""
+           }
     
     private func handleBackspace(){
         guard currentRow < rows.count, !rows[currentRow].isEmpty else{
