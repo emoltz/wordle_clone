@@ -14,7 +14,7 @@ struct GameBoardRow: View {
         
         LazyVGrid(columns: columns, spacing: 20){
             ForEach(characters.indices, id: \.self) { index in
-                Tile(tileColor: Color("TileColor"), character: $characters[index])
+                Tile(tileColor: Color("TileColor"), character: $characters[index], result: "G")
             }
         }
     }

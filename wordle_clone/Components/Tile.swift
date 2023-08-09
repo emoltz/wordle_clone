@@ -6,11 +6,22 @@ struct Tile: View{
     var tileColor:Color
     @Binding var character: String
     @State private var isEditing: Bool = false
+    var result: Character?
+    private var displayColor: Color{
+        if let result = result{
+            return result == "G" ? Color("CorrectTile") :
+            result == "Y" ? Color("WrongPlacementTile") :
+            result == "R" ? Color("IncorrectTile") : tileColor
+        } else{
+            return tileColor
+        }
+    }
     
     var body: some View{
+        
         ZStack {
             Rectangle()
-                .foregroundColor(tileColor)
+                .foregroundColor(displayColor)
                 .frame(width: 65,height: 65)
                 .cornerRadius(10)
             Text(character)
@@ -28,6 +39,6 @@ struct Tile: View{
 
 struct Tile_Preview: PreviewProvider {
     static var previews: some View {
-        Tile(tileColor: Color("TileColor"), character: .constant("W"))
+        Tile(tileColor: Color("TileColor"), character: .constant("W"), result: "Y")
     }
 }
