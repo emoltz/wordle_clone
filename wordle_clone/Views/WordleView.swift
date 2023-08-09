@@ -53,13 +53,7 @@ struct WordleView: View{
                 secondaryButton: .cancel()
             )
         }
-        .alert(isPresented: $showErrorAlert){
-            Alert(
-                title: Text("Error"),
-                message: Text("Enter a 5 letter word"),
-                dismissButton: .default(Text("OK"))
-            )
-        }
+        // TODO: add alert when 5 letter word not entered
         
     }
     
@@ -116,7 +110,9 @@ struct WordleView: View{
         currentInput = ""
         currentRow = 0
         rows = Array(repeating: Array(repeating: "", count: 5), count: 5)
-        guessResults[currentRow] = startingPosition
+        for index in guessResults.indices {
+                guessResults[index] = startingPosition
+            }
     }
 }
 
