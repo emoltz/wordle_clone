@@ -1,10 +1,12 @@
 import SwiftUI
 
 struct WordleView: View{
+    // variables to keep track of what is happening
+    @ObservedObject var game = WordleGame()
     @State private var currentInput: String = ""
     @State private var currentRow: Int = 0
     @State private var rows: [[String]] = Array(repeating: Array(repeating: "", count: 5), count: 5)
-    @ObservedObject var game = WordleGame()
+    
     @State private var guessResults: [[Character]] = Array(repeating: startingPosition, count: 5)
     @State var showErrorAlert: Bool = false
     
@@ -59,7 +61,7 @@ struct WordleView: View{
         
     }
     
-    
+    // UI Related functions to talk to the backend
     private func enterGuess(){
         
         let guessWord = rows[currentRow].joined()
