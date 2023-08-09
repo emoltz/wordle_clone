@@ -33,7 +33,7 @@ class WordleGame: ObservableObject {
                     result.append("Y") // Yellow: correct letter but in the wrong position
                 }
             } else {
-                result.append("R") // Red: incorrect letter
+                result.append("R") // Gray: incorrect letter
             }
         }
         
@@ -41,6 +41,7 @@ class WordleGame: ObservableObject {
     }
     
     var isGameOver: Bool {
+        // this checks to see if the game is over
         if (attempts >= maxAttempts || guessHistory.last == targetWord){
             gameOver = true
             return gameOver
@@ -51,7 +52,7 @@ class WordleGame: ObservableObject {
     }
     
     func resetGame() {
-        // Reset the game state
+        // Reset the game state on the backend
         targetWord = wordList.randomElement() ?? "SWIFT"
         print(targetWord)
         attempts = 0
