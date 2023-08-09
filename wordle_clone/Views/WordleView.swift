@@ -75,10 +75,9 @@ struct WordleView: View{
         // use guessResult to update UI
         print("Guessed: \(guessWord), Result: \(guessResults[currentRow])")
         
-        if game.isGameOver{
+        if game.isGameOver == true{
+            // this will trigger the alert as well
             print("Game Over: \(game.gameOver)")
-            //            game.resetGame()
-            //            print("Game reset. Game Over = \(game.gameOver)")
         }
         else{
             currentRow += 1
