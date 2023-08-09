@@ -75,11 +75,7 @@ struct WordleView: View{
         // use guessResult to update UI
         print("Guessed: \(guessWord), Result: \(guessResults[currentRow])")
         
-        if game.isGameOver == true{
-            // this will trigger the alert as well
-            print("Game Over: \(game.gameOver)")
-        }
-        else{
+        if !game.isGameOver{
             currentRow += 1
         }
     }
@@ -90,7 +86,7 @@ struct WordleView: View{
             return
         }
         rows[currentRow][index] = input
-        print("Characters: \(rows[currentRow])")
+//        print("Characters: \(rows[currentRow])")
         
         currentInput = ""
     }
