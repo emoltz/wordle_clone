@@ -13,10 +13,12 @@ struct WordleView: View{
     var body: some View {
         
         VStack{
-            ForEach(rows.indices, id:\.self){ i in
-                GameBoardRow(characters: $rows[i], results: guessResults[i])
+            VStack (spacing: 20){
+                ForEach(rows.indices, id:\.self){ i in
+                    GameBoardRow(characters: $rows[i], results: guessResults[i])
+                }
             }
-            .padding()
+            .padding(20)
             
             
             Spacer()
