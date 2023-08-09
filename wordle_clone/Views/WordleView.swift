@@ -6,6 +6,7 @@ struct WordleView: View{
     @State private var rows: [[String]] = Array(repeating: Array(repeating: "", count: 5), count: 5)
     @ObservedObject var game = WordleGame()
     @State private var guessResults: [[Character]] = Array(repeating: startingPosition, count: 5)
+    @State var showErrorAlert: Bool = false
     
     var body: some View {
         
@@ -48,6 +49,13 @@ struct WordleView: View{
                 secondaryButton: .cancel()
             )
         }
+        .alert(isPresented: $showErrorAlert){
+            Alert(
+                title: Text("Error"),
+                message: Text("Enter a 5 letter word"),
+                dismissButton: .default(Text("OK"))
+            )
+        }
         
     }
     
@@ -57,7 +65,8 @@ struct WordleView: View{
         let guessWord = rows[currentRow].joined()
         
         if guessWord.count != 5{
-            print("Not enough letters in guess")
+//            print("Not enough letters in guess")
+            showErrorAlert = true
             rows[currentRow] = resetRow
             return
         }
