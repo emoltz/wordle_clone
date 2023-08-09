@@ -5,13 +5,13 @@ struct WordleView: View{
     @State private var currentRow: Int = 0
     @State private var rows: [[String]] = Array(repeating: Array(repeating: "", count: 5), count: 5)
     @ObservedObject var game = WordleGame()
-    @State private var guessResult: [Character] = startingPosition
-    
+    @State private var guessResults: [[Character]] = Array(repeating: startingPosition, count: 5)
+
     var body: some View {
         
         VStack{
             ForEach(rows.indices, id:\.self){ i in
-                GameBoardRow(characters: $rows[i], results: guessResult)
+                GameBoardRow(characters: $rows[i], results: guessResults[i])
             }
             .padding()
             
@@ -49,11 +49,11 @@ struct WordleView: View{
             return
         }
         
-        guessResult = game.guess(word: guessWord)
+        guessResults[currentRow] = game.guess(word: guessWord)
     
         
         // use guessResult to update UI
-        print("Guessed: \(guessWord), Result: \(guessResult)")
+        print("Guessed: \(guessWord), Result: \(guessResults[currentRow])")
         
         if game.isGameOver{
             print("Game Over")
