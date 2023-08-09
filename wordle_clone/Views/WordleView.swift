@@ -6,7 +6,7 @@ struct WordleView: View{
     @State private var rows: [[String]] = Array(repeating: Array(repeating: "", count: 5), count: 5)
     @ObservedObject var game = WordleGame()
     @State private var guessResults: [[Character]] = Array(repeating: startingPosition, count: 5)
-
+    
     var body: some View {
         
         VStack{
@@ -22,7 +22,7 @@ struct WordleView: View{
             
             Button("Guess!") {
                 enterGuess()
-
+                
             }
             .padding()
             .foregroundColor(.white)
@@ -35,10 +35,18 @@ struct WordleView: View{
             processInput(newValue)
             
         }
+        .alert(isPresented: $game.gameOver){
+            Alert(
+                title: Text("Game Over"),
+                message: Text("Would you like to play again?"),
+                primaryButton: .default(Text("Restart"), action: game.resetGame),
+                secondaryButton: .cancel()
+            )
+        }
         
     }
     
-   
+    
     private func enterGuess(){
         
         let guessWord = rows[currentRow].joined()
@@ -50,13 +58,15 @@ struct WordleView: View{
         }
         
         guessResults[currentRow] = game.guess(word: guessWord)
-    
+        
         
         // use guessResult to update UI
         print("Guessed: \(guessWord), Result: \(guessResults[currentRow])")
         
         if game.isGameOver{
-            print("Game Over")
+            print("Game Over: \(game.gameOver)")
+            //            game.resetGame()
+            //            print("Game reset. Game Over = \(game.gameOver)")
         }
         else{
             currentRow += 1
@@ -64,24 +74,31 @@ struct WordleView: View{
     }
     
     private func processInput(_ input: String) {
-               guard currentRow < rows.count, let index = rows[currentRow].firstIndex(where: { $0.isEmpty }) else {
-                   print("no more room!")
-                   return
-               }
-               rows[currentRow][index] = input
-               print("Characters: \(rows[currentRow])")
-               
-               currentInput = ""
-           }
+        guard currentRow < rows.count, let index = rows[currentRow].firstIndex(where: { $0.isEmpty }) else {
+            print("no more room!")
+            return
+        }
+        rows[currentRow][index] = input
+        print("Characters: \(rows[currentRow])")
+        
+        currentInput = ""
+    }
     
     private func handleBackspace(){
         guard currentRow < rows.count, !rows[currentRow].isEmpty else{
             return
         }
-    
+        
         if let lastIndex = rows[currentRow].lastIndex(where: {!$0.isEmpty}){
             rows[currentRow][lastIndex] = ""
         }
+    }
+    
+    private func resetUI(){
+        currentInput = ""
+        currentRow = 0
+        rows = Array(repeating: Array(repeating: "", count: 5), count: 5)
+        guessResults[currentRow] = startingPosition
     }
 }
 

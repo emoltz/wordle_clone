@@ -4,27 +4,29 @@ class WordleGame: ObservableObject {
     @Published var targetWord: String
     @Published var attempts: Int = 0
     @Published var guessHistory: [String] = []
+    @Published var gameOver: Bool = false
     var maxAttempts: Int = 6
-
+    
     init() {
         // Select a random word from a predefined list
-//        let words = ["apple", "water", "swift", "money", "plant"]
-//        targetWord = words.randomElement() ?? "apple"
-        targetWord = "APPLE"
+        let words = wordList
+        targetWord = words.randomElement() ?? "SWIFT"
+        print(targetWord)
     }
-
+    
     func guess(word: String) -> [Character] {
         attempts += 1
         guessHistory.append(word)
         return evaluateGuess(guess: word)
     }
-
+    
     private func evaluateGuess(guess: String) -> [Character] {
         var result: [Character] = []
         
         for (index, letter) in guess.enumerated() {
             let targetIndex = targetWord.index(targetWord.startIndex, offsetBy: index)
             if targetWord.contains(letter) {
+                // TODO: change these symbols
                 if targetWord[targetIndex] == letter {
                     result.append("G") // Green: correct letter in the correct position
                 } else {
@@ -32,7 +34,6 @@ class WordleGame: ObservableObject {
                 }
             } else {
                 result.append("R") // Red: incorrect letter
-                // TODO: change these symbols
             }
         }
         
@@ -40,12 +41,22 @@ class WordleGame: ObservableObject {
     }
     
     var isGameOver: Bool {
-        return attempts >= maxAttempts || guessHistory.last == targetWord
+        if (attempts >= maxAttempts || guessHistory.last == targetWord){
+            gameOver = true
+            return gameOver
+        }
+        else{
+            return gameOver
+        }
     }
-}
-
-struct WordList{
-    var words:[String] = []
+    
+    func resetGame() {
+        // Reset the game state
+        targetWord = wordList.randomElement() ?? "SWIFT"
+        attempts = 0
+        guessHistory.removeAll()
+        gameOver = false
+    }
 }
 
 var sampleResults:[Character] = ["G", "Y", "Y", "Y", "R"]
