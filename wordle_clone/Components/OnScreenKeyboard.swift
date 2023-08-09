@@ -8,6 +8,7 @@ struct OnScreenKeyboard: View {
         ["Z", "X", "C", "V", "B", "N", "M"] // Third row
     ]
     @Binding var currentInput: String
+    var onBackspace: () -> Void
     
     var body: some View {
         ZStack {
@@ -33,11 +34,7 @@ struct OnScreenKeyboard: View {
                         // Add a backspace button next to the "M" key in the third row
                         if rowIndex == 2 {
                             
-                            Button(action:{
-                                if !currentInput.isEmpty {
-                                    currentInput.removeLast()
-                                }
-                            }) {
+                            Button(action: onBackspace) {
                                 Image(systemName: "delete.left.fill")
                                     .font(.title)
                                     .foregroundColor(.white)
@@ -57,6 +54,6 @@ struct OnScreenKeyboard: View {
 
 struct OnScreenKeyboard_Previews: PreviewProvider {
     static var previews: some View {
-        OnScreenKeyboard(currentInput: .constant("W"))
+        OnScreenKeyboard(currentInput: .constant("W"), onBackspace: {})
     }
 }

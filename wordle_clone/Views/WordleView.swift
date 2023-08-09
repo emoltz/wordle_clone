@@ -17,7 +17,7 @@ struct WordleView: View{
             
             Spacer()
             
-            OnScreenKeyboard(currentInput: $currentInput)
+            OnScreenKeyboard(currentInput: $currentInput, onBackspace: handleBackspace)
             
             Button("Guess!") {
                 enterGuess()
@@ -59,6 +59,16 @@ struct WordleView: View{
         }
         else{
             currentRow += 1
+        }
+    }
+    
+    private func handleBackspace(){
+        guard currentRow < rows.count, !rows[currentRow].isEmpty else{
+            return
+        }
+    
+        if let lastIndex = rows[currentRow].lastIndex(where: {!$0.isEmpty}){
+            rows[currentRow][lastIndex] = ""
         }
     }
 }
