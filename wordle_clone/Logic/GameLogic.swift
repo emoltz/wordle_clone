@@ -53,6 +53,7 @@ class WordleGame: ObservableObject {
     func resetGame() {
         // Reset the game state
         targetWord = wordList.randomElement() ?? "SWIFT"
+        print(targetWord)
         attempts = 0
         guessHistory.removeAll()
         gameOver = false

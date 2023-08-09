@@ -39,7 +39,12 @@ struct WordleView: View{
             Alert(
                 title: Text("Game Over"),
                 message: Text("Would you like to play again?"),
-                primaryButton: .default(Text("Restart"), action: game.resetGame),
+                primaryButton: .default(Text("Restart"), action:{
+                    game.resetGame()
+                    resetUI()
+                    
+                }
+                                       ),
                 secondaryButton: .cancel()
             )
         }
