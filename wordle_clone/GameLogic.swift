@@ -1,18 +1,19 @@
 import Foundation
 
-struct WordleGame {
-    var targetWord: String
-    var attempts: Int = 0
-    var guessHistory: [String] = []
+class WordleGame: ObservableObject {
+    @Published var targetWord: String
+    @Published var attempts: Int = 0
+    @Published var guessHistory: [String] = []
     var maxAttempts: Int = 6
 
     init() {
         // Select a random word from a predefined list
-        let words = ["apple", "water", "swift", "money", "plant"]
-        targetWord = words.randomElement() ?? "apple"
+//        let words = ["apple", "water", "swift", "money", "plant"]
+//        targetWord = words.randomElement() ?? "apple"
+        targetWord = "APPLE"
     }
 
-    mutating func guess(word: String) -> [Character] {
+    func guess(word: String) -> [Character] {
         attempts += 1
         guessHistory.append(word)
         return evaluateGuess(guess: word)
@@ -40,4 +41,8 @@ struct WordleGame {
     var isGameOver: Bool {
         return attempts >= maxAttempts || guessHistory.last == targetWord
     }
+}
+
+struct WordList{
+    var words:[String] = []
 }

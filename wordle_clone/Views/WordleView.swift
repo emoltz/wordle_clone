@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct WordleView: View{
-    @State private var characters: [String] = Array(repeating: "", count: 5)
     @State private var currentInput: String = ""
     @State private var currentRow: Int = 0
     @State private var rows: [[String]] = Array(repeating: Array(repeating: "", count: 5), count: 5)
+    @ObservedObject var game = WordleGame()
     
     var body: some View {
         
@@ -20,7 +20,8 @@ struct WordleView: View{
             OnScreenKeyboard(currentInput: $currentInput)
             
             Button("Guess!") {
-                print("Pressed")
+                enterGuess()
+
             }
             .padding()
             .foregroundColor(.white)
@@ -46,6 +47,20 @@ struct WordleView: View{
             
             currentInput = ""
         }
+    
+    private func enterGuess(){
+        let guessWord = rows[currentRow].joined()
+        let guessResult = game.guess(word: guessWord)
+        // use guessResult to update UI
+        print("Guessed: \(guessWord), Result: \(guessResult)")
+        
+        if game.isGameOver{
+            print("Game Over")
+        }
+        else{
+            currentRow += 1
+        }
+    }
 }
 
 
