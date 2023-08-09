@@ -20,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		719CCC9F2A83DE84008A6FD3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		71CFEDC82A81E15D0033EAD3 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		71CFEDCA2A82861D0033EAD3 /* GameBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
 		71CFEDCC2A828CDE0033EAD3 /* OnScreenKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnScreenKeyboard.swift; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 		71DBACBF2A81282900EB9197 = {
 			isa = PBXGroup;
 			children = (
+				719CCC9F2A83DE84008A6FD3 /* README.md */,
 				71DBACCA2A81282900EB9197 /* wordle_clone */,
 				71DBACC92A81282900EB9197 /* Products */,
 			);
