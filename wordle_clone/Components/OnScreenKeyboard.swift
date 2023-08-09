@@ -13,7 +13,7 @@ struct OnScreenKeyboard: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(Color("TileColor"))
+                .foregroundColor(Color("KeyboardBackground"))
                 .frame(height: 150)
                 .clipped()
             VStack(spacing:10){
@@ -27,7 +27,7 @@ struct OnScreenKeyboard: View {
                                     .font(.title)
                                     .foregroundColor(.white)
                                     .frame(minWidth:10, maxWidth:30)
-                                    .background(Color("TileColor"))
+                                    .background(Color("KeyboardBackground"))
                                     .cornerRadius(5)
                             }
                         }
@@ -40,7 +40,7 @@ struct OnScreenKeyboard: View {
                                     .font(.title)
                                     .foregroundColor(.white)
                                     .frame(minWidth: 10, maxWidth: 30)
-                                    .background(Color("TileColor"))
+                                    .background(Color("KeyboardBackground"))
                                     .cornerRadius(5)
                             }
                             .offset(x:15)

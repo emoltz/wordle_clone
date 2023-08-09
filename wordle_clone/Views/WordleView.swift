@@ -31,7 +31,7 @@ struct WordleView: View{
             }
             .padding()
             .foregroundColor(.white)
-            .background(Color("TileColor"))
+            .background(Color("GuessButton"))
             .cornerRadius(10)
             .fontWeight(.bold)
             
