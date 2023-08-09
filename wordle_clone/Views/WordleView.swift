@@ -53,13 +53,7 @@ struct WordleView: View{
                 secondaryButton: .cancel()
             )
         }
-        .alert(isPresented: $showErrorAlert){
-            Alert(
-                title: Text("Error"),
-                message: Text("Enter a 5 letter word"),
-                dismissButton: .default(Text("OK"))
-            )
-        }
+        // TODO: add alert when 5 letter word not entered
         
     }
     
@@ -81,12 +75,7 @@ struct WordleView: View{
         // use guessResult to update UI
         print("Guessed: \(guessWord), Result: \(guessResults[currentRow])")
         
-        if game.isGameOver{
-            print("Game Over: \(game.gameOver)")
-            //            game.resetGame()
-            //            print("Game reset. Game Over = \(game.gameOver)")
-        }
-        else{
+        if !game.isGameOver{
             currentRow += 1
         }
     }
@@ -97,7 +86,7 @@ struct WordleView: View{
             return
         }
         rows[currentRow][index] = input
-        print("Characters: \(rows[currentRow])")
+//        print("Characters: \(rows[currentRow])")
         
         currentInput = ""
     }
@@ -116,7 +105,9 @@ struct WordleView: View{
         currentInput = ""
         currentRow = 0
         rows = Array(repeating: Array(repeating: "", count: 5), count: 5)
-        guessResults[currentRow] = startingPosition
+        for index in guessResults.indices {
+                guessResults[index] = startingPosition
+            }
     }
 }
 

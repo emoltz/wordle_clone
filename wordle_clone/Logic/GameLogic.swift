@@ -5,7 +5,7 @@ class WordleGame: ObservableObject {
     @Published var attempts: Int = 0
     @Published var guessHistory: [String] = []
     @Published var gameOver: Bool = false
-    var maxAttempts: Int = 6
+    var maxAttempts: Int = 5
     
     init() {
         // Select a random word from a predefined list
