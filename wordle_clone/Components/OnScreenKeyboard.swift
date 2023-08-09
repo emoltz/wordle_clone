@@ -5,7 +5,7 @@ struct OnScreenKeyboard: View {
     let rows: [[String]] = [
         ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
         ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
-        ["Z", "X", "C", "V", "B", "N", "M"]
+        ["Z", "X", "C", "V", "B", "N", "M"] // Third row
     ]
     @Binding var currentInput: String
     
@@ -15,12 +15,11 @@ struct OnScreenKeyboard: View {
                 .foregroundColor(Color("TileColor"))
                 .frame(width:.infinity, height: 150)
             VStack(spacing:10){
-                ForEach(rows, id: \.self) {row in
+                ForEach(rows.indices, id: \.self) { rowIndex in
                     HStack(spacing: 10){
-                        ForEach(row, id: \.self){ character in
+                        ForEach(rows[rowIndex], id: \.self){ character in
                             Button(action: {
                                 currentInput = character
-//                                print(currentInput)
                             }){
                                 Text(character)
                                     .font(.title)
@@ -29,6 +28,24 @@ struct OnScreenKeyboard: View {
                                     .background(Color("TileColor"))
                                     .cornerRadius(5)
                             }
+                        }
+                        
+                        // Add a backspace button next to the "M" key in the third row
+                        if rowIndex == 2 {
+                            
+                            Button(action:{
+                                if !currentInput.isEmpty {
+                                    currentInput.removeLast()
+                                }
+                            }) {
+                                Image(systemName: "delete.left.fill")
+                                    .font(.title)
+                                    .foregroundColor(.white)
+                                    .frame(minWidth: 10, maxWidth: 30)
+                                    .background(Color("TileColor"))
+                                    .cornerRadius(5)
+                            }
+                            .offset(x:15)
                             
                         }
                     }
