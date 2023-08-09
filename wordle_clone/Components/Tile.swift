@@ -11,7 +11,8 @@ struct Tile: View{
         if let result = result{
             return result == "G" ? Color("CorrectTile") :
             result == "Y" ? Color("WrongPlacementTile") :
-            result == "R" ? Color("IncorrectTile") : tileColor
+            result == "R" ? Color("IncorrectTile") :
+            result == "U" ? Color("StartingTile") : tileColor
         } else{
             return tileColor
         }

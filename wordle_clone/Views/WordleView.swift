@@ -5,13 +5,13 @@ struct WordleView: View{
     @State private var currentRow: Int = 0
     @State private var rows: [[String]] = Array(repeating: Array(repeating: "", count: 5), count: 5)
     @ObservedObject var game = WordleGame()
-    @State private var guessResult: [Character] = []
+    @State private var guessResult: [Character] = startingPosition
     
     var body: some View {
         
         VStack{
             ForEach(rows.indices, id:\.self){ i in
-                GameBoardRow(characters: $rows[i])
+                GameBoardRow(characters: $rows[i], results: guessResult)
             }
             .padding()
             
@@ -40,10 +40,17 @@ struct WordleView: View{
     
    
     private func enterGuess(){
-        let guessWord = rows[currentRow].joined()
-        let guessResult = game.guess(word: guessWord)
         
-        // TODO: if the guess is wrong, wipe it clean
+        let guessWord = rows[currentRow].joined()
+        
+        if guessWord.count != 5{
+            print("Not enough letters in guess")
+            rows[currentRow] = resetRow
+            return
+        }
+        
+        guessResult = game.guess(word: guessWord)
+    
         
         // use guessResult to update UI
         print("Guessed: \(guessWord), Result: \(guessResult)")

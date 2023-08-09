@@ -32,6 +32,7 @@ class WordleGame: ObservableObject {
                 }
             } else {
                 result.append("R") // Red: incorrect letter
+                // TODO: change these symbols
             }
         }
         
@@ -46,3 +47,8 @@ class WordleGame: ObservableObject {
 struct WordList{
     var words:[String] = []
 }
+
+var sampleResults:[Character] = ["G", "Y", "Y", "Y", "R"]
+var startingPosition:[Character] = ["U", "U", "U", "U", "U"]
+var resetRow = Array(repeating:"", count:5)
+var correctGuess = ["G", "G", "G", "G", "G"]
