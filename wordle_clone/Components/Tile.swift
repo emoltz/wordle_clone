@@ -1,7 +1,5 @@
 import SwiftUI
 
-
-
 struct Tile: View{
     var tileColor:Color
     @Binding var character: String
