@@ -26,7 +26,6 @@ class WordleGame: ObservableObject {
         for (index, letter) in guess.enumerated() {
             let targetIndex = targetWord.index(targetWord.startIndex, offsetBy: index)
             if targetWord.contains(letter) {
-                // TODO: change these symbols
                 if targetWord[targetIndex] == letter {
                     result.append("G") // Green: correct letter in the correct position
                 } else {
