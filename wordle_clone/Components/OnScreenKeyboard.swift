@@ -24,7 +24,7 @@ struct OnScreenKeyboard: View {
                                 currentInput = character
                             }){
                                 Text(character)
-                                    .font(.title)
+                                    .font(.custom("Oswald-Bold", size:25))
                                     .foregroundColor(.white)
                                     .frame(minWidth:10, maxWidth:30)
                                     .background(Color("KeyboardBackground"))
@@ -37,7 +37,8 @@ struct OnScreenKeyboard: View {
                             
                             Button(action: onBackspace) {
                                 Image(systemName: "delete.left.fill")
-                                    .font(.title)
+//                                    .font(.title)
+                                    .font(.custom("Oswald-Bold", size:25))
                                     .foregroundColor(.white)
                                     .frame(minWidth: 10, maxWidth: 30)
                                     .background(Color("KeyboardBackground"))

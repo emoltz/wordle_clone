@@ -9,10 +9,13 @@ struct WordleView: View{
     
     @State private var guessResults: [[Character]] = Array(repeating: startingPosition, count: 5)
     @State var showErrorAlert: Bool = false
+    @State private var resetGame: Bool = false
     
     var body: some View {
         
+        
         VStack{
+            TitleView(resetGame: $resetGame)
             VStack (spacing: 20){
                 ForEach(rows.indices, id:\.self){ i in
                     GameBoardRow(characters: $rows[i], results: guessResults[i])
@@ -25,20 +28,28 @@ struct WordleView: View{
             
             OnScreenKeyboard(currentInput: $currentInput, onBackspace: handleBackspace)
             
-            Button("Guess!") {
+            Button("GUESS!") {
                 enterGuess()
                 
             }
             .padding()
+            .font(.custom("Oswald-Regular", size:20))
             .foregroundColor(.white)
             .background(Color("GuessButton"))
             .cornerRadius(10)
-            .fontWeight(.bold)
+            
             
         }
         .onChange(of: currentInput){ newValue in
             processInput(newValue)
             
+        }
+        .onChange(of:resetGame){ newValue in
+            if newValue{
+                resetUI()
+                game.resetGame()
+                resetGame = false
+            }
         }
         .alert(isPresented: $game.gameOver){
             Alert(
@@ -53,7 +64,7 @@ struct WordleView: View{
                 secondaryButton: .cancel()
             )
         }
-        // TODO: add alert when 5 letter word not entered
+        
         
     }
     
