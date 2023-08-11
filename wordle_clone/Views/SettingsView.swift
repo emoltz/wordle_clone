@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Binding var resetGame:Bool
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack{
             Text("Settings")
@@ -9,6 +10,8 @@ struct SettingsView: View {
             Spacer()
             Button("Restart Game"){
                 resetGame = true
+                presentationMode.wrappedValue.dismiss()
+
             }
             .padding()
             .foregroundColor(.white)
