@@ -59,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71C9ED292A86E61F0024EF20 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				71C9ED212A86800C0024EF20 /* Oswald-Bold.ttf */,
+				71C9ED252A86E50C0024EF20 /* Oswald-Light.ttf */,
+				71C9ED262A86E50C0024EF20 /* Oswald-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		71CFEDC62A81E1180033EAD3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,9 +102,7 @@
 		71DBACBF2A81282900EB9197 = {
 			isa = PBXGroup;
 			children = (
-				71C9ED212A86800C0024EF20 /* Oswald-Bold.ttf */,
-				71C9ED252A86E50C0024EF20 /* Oswald-Light.ttf */,
-				71C9ED262A86E50C0024EF20 /* Oswald-Regular.ttf */,
+				71C9ED292A86E61F0024EF20 /* fonts */,
 				719CCC9F2A83DE84008A6FD3 /* README.md */,
 				71DBACCA2A81282900EB9197 /* wordle_clone */,
 				71DBACC92A81282900EB9197 /* Products */,
