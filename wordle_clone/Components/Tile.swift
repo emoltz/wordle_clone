@@ -34,6 +34,6 @@ struct Tile: View{
 
 struct Tile_Preview: PreviewProvider {
     static var previews: some View {
-        Tile(tileColor: Color("TileColor"), character: .constant("W"), result: "G")
+        Tile(tileColor: Color("TileColor"), character: .constant("W"), result: "Y")
     }
 }

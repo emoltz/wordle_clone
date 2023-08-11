@@ -13,6 +13,7 @@ struct WordleView: View{
     var body: some View {
         
         VStack{
+            TitleView()
             VStack (spacing: 20){
                 ForEach(rows.indices, id:\.self){ i in
                     GameBoardRow(characters: $rows[i], results: guessResults[i])
@@ -53,7 +54,7 @@ struct WordleView: View{
                 secondaryButton: .cancel()
             )
         }
-        // TODO: add alert when 5 letter word not entered
+        
         
     }
     
