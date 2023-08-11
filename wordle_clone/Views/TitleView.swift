@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TitleView: View {
     @State private var isSettingsViewPresented = false
+    @Binding var resetGame:Bool
 
     
     var body: some View {
@@ -18,7 +19,8 @@ struct TitleView: View {
                     .foregroundColor(Color("GearColor"))
             }
             .sheet(isPresented: $isSettingsViewPresented){
-                SettingsView()
+                SettingsView(resetGame: $resetGame)
+                // TODO: close sheet on press of button
             }
             .padding()
             
@@ -30,6 +32,6 @@ struct TitleView: View {
 
 struct Title_Previews: PreviewProvider {
     static var previews: some View {
-        TitleView()
+        TitleView(resetGame: .constant(false))
     }
 }

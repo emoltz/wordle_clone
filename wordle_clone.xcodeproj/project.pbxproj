@@ -10,6 +10,8 @@
 		71C9ED1C2A8678310024EF20 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9ED1B2A8678310024EF20 /* TitleView.swift */; };
 		71C9ED222A86800C0024EF20 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C9ED212A86800C0024EF20 /* Oswald-Bold.ttf */; };
 		71C9ED242A8680D80024EF20 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9ED232A8680D80024EF20 /* SettingsView.swift */; };
+		71C9ED272A86E50C0024EF20 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C9ED252A86E50C0024EF20 /* Oswald-Light.ttf */; };
+		71C9ED282A86E50C0024EF20 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C9ED262A86E50C0024EF20 /* Oswald-Regular.ttf */; };
 		71CFEDC92A81E15D0033EAD3 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CFEDC82A81E15D0033EAD3 /* Tile.swift */; };
 		71CFEDCB2A82861D0033EAD3 /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CFEDCA2A82861D0033EAD3 /* GameBoardView.swift */; };
 		71CFEDCD2A828CDE0033EAD3 /* OnScreenKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CFEDCC2A828CDE0033EAD3 /* OnScreenKeyboard.swift */; };
@@ -28,6 +30,8 @@
 		71C9ED1B2A8678310024EF20 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		71C9ED212A86800C0024EF20 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
 		71C9ED232A8680D80024EF20 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		71C9ED252A86E50C0024EF20 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
+		71C9ED262A86E50C0024EF20 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
 		71CFEDC82A81E15D0033EAD3 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		71CFEDCA2A82861D0033EAD3 /* GameBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
 		71CFEDCC2A828CDE0033EAD3 /* OnScreenKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnScreenKeyboard.swift; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				71C9ED212A86800C0024EF20 /* Oswald-Bold.ttf */,
+				71C9ED252A86E50C0024EF20 /* Oswald-Light.ttf */,
+				71C9ED262A86E50C0024EF20 /* Oswald-Regular.ttf */,
 				719CCC9F2A83DE84008A6FD3 /* README.md */,
 				71DBACCA2A81282900EB9197 /* wordle_clone */,
 				71DBACC92A81282900EB9197 /* Products */,
@@ -185,9 +191,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71C9ED282A86E50C0024EF20 /* Oswald-Regular.ttf in Resources */,
 				71DBACD42A81282B00EB9197 /* Preview Assets.xcassets in Resources */,
 				71DBACD02A81282B00EB9197 /* Assets.xcassets in Resources */,
 				71C9ED222A86800C0024EF20 /* Oswald-Bold.ttf in Resources */,
+				71C9ED272A86E50C0024EF20 /* Oswald-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,13 +1,14 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Binding var resetGame:Bool
     var body: some View {
         VStack{
             Text("Settings")
                 .font(.custom("Oswald-Bold", size: 35))
             Spacer()
             Button("Restart Game"){
-                // TODO: functionality
+                resetGame = true
             }
             .padding()
             .foregroundColor(.white)
@@ -22,6 +23,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(resetGame: .constant(false))
     }
 }

@@ -23,7 +23,8 @@ struct Tile: View{
                 .frame(width: 60,height: 60)
                 .cornerRadius(10)
             Text(character)
-                .font(.system(size:40))
+                .font(.custom("Oswald-Bold", size:40))
+//                .font(.system(size:40))
                 .foregroundColor(.white)
                 .fontWeight(.bold)
         }
