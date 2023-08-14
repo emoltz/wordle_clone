@@ -8,6 +8,7 @@ struct SettingsView: View {
             Text("Settings")
                 .font(.custom("Oswald-Bold", size: 35))
             Spacer()
+            Spacer()
             Button("Restart Game"){
                 resetGame = true
                 presentationMode.wrappedValue.dismiss()

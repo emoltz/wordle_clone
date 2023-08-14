@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7130EA632A8923330075F15D /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7130EA622A8923330075F15D /* ShareButton.swift */; };
 		71C9ED1C2A8678310024EF20 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9ED1B2A8678310024EF20 /* TitleView.swift */; };
 		71C9ED222A86800C0024EF20 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C9ED212A86800C0024EF20 /* Oswald-Bold.ttf */; };
 		71C9ED242A8680D80024EF20 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9ED232A8680D80024EF20 /* SettingsView.swift */; };
@@ -23,14 +24,17 @@
 		71DBACDB2A812AE700EB9197 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DBACDA2A812AE700EB9197 /* GameLogic.swift */; };
 		71DBACDD2A812B6600EB9197 /* WordleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DBACDC2A812B6600EB9197 /* WordleView.swift */; };
 		71FDA9702A82D15C00D551E8 /* GameBoardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDA96F2A82D15C00D551E8 /* GameBoardRow.swift */; };
+		71FEDFF52A8A6C790014403A /* GameOverSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FEDFF42A8A6C790014403A /* GameOverSheetView.swift */; };
+		71FEDFF72A8A6CFE0014403A /* TitleOswaldBold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FEDFF62A8A6CFE0014403A /* TitleOswaldBold.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7130EA622A8923330075F15D /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		719CCC9F2A83DE84008A6FD3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		71C9ED1B2A8678310024EF20 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		71C9ED212A86800C0024EF20 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
 		71C9ED232A8680D80024EF20 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		71C9ED252A86E50C0024EF20 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
+		71C9ED252A86E50C0024EF20 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-Light.ttf"; path = "fonts/Oswald-Light.ttf"; sourceTree = SOURCE_ROOT; };
 		71C9ED262A86E50C0024EF20 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
 		71CFEDC82A81E15D0033EAD3 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		71CFEDCA2A82861D0033EAD3 /* GameBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
@@ -46,6 +50,8 @@
 		71DBACDA2A812AE700EB9197 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		71DBACDC2A812B6600EB9197 /* WordleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleView.swift; sourceTree = "<group>"; };
 		71FDA96F2A82D15C00D551E8 /* GameBoardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardRow.swift; sourceTree = "<group>"; };
+		71FEDFF42A8A6C790014403A /* GameOverSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverSheetView.swift; sourceTree = "<group>"; };
+		71FEDFF62A8A6CFE0014403A /* TitleOswaldBold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleOswaldBold.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,8 @@
 				71CFEDC82A81E15D0033EAD3 /* Tile.swift */,
 				71CFEDCC2A828CDE0033EAD3 /* OnScreenKeyboard.swift */,
 				71FDA96F2A82D15C00D551E8 /* GameBoardRow.swift */,
+				7130EA622A8923330075F15D /* ShareButton.swift */,
+				71FEDFF62A8A6CFE0014403A /* TitleOswaldBold.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -84,6 +92,7 @@
 			children = (
 				71CFEDCA2A82861D0033EAD3 /* GameBoardView.swift */,
 				71DBACDC2A812B6600EB9197 /* WordleView.swift */,
+				71FEDFF42A8A6C790014403A /* GameOverSheetView.swift */,
 				71C9ED1B2A8678310024EF20 /* TitleView.swift */,
 				71C9ED232A8680D80024EF20 /* SettingsView.swift */,
 			);
@@ -217,10 +226,13 @@
 				71C9ED1C2A8678310024EF20 /* TitleView.swift in Sources */,
 				71CFEDC92A81E15D0033EAD3 /* Tile.swift in Sources */,
 				71DBACDB2A812AE700EB9197 /* GameLogic.swift in Sources */,
+				7130EA632A8923330075F15D /* ShareButton.swift in Sources */,
 				71CFEDCD2A828CDE0033EAD3 /* OnScreenKeyboard.swift in Sources */,
+				71FEDFF72A8A6CFE0014403A /* TitleOswaldBold.swift in Sources */,
 				71DBACCE2A81282900EB9197 /* ContentView.swift in Sources */,
 				71DBACCC2A81282900EB9197 /* wordle_cloneApp.swift in Sources */,
 				71CFEDCB2A82861D0033EAD3 /* GameBoardView.swift in Sources */,
+				71FEDFF52A8A6C790014403A /* GameOverSheetView.swift in Sources */,
 				71DBACDD2A812B6600EB9197 /* WordleView.swift in Sources */,
 				71FDA9702A82D15C00D551E8 /* GameBoardRow.swift in Sources */,
 				71D1E6202A840BD800570192 /* WordList.swift in Sources */,
