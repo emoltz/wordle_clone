@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>62311471251-fv521lo6bgklf8c5i1vo30vjnkh8l2gv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.62311471251-fv521lo6bgklf8c5i1vo30vjnkh8l2gv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDMLbfqzQ2qiHm3n8DLTwC3cl7nuu11Luw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>62311471251</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.esmoltz.wordle-clone</string>
+	<key>PROJECT_ID</key>
+	<string>wordleclone-ae473</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wordleclone-ae473.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:62311471251:ios:fd2bf881b38bb6796e5566</string>
+</dict>
+</plist>
