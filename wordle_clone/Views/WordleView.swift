@@ -8,6 +8,7 @@ struct WordleView: View{
     @State private var rows: [[String]] = Array(repeating: Array(repeating: "", count: 5), count: 5)
     
     @State private var guessResults: [[Character]] = Array(repeating: startingPosition, count: 5)
+    @State private var shareImageTiles: [[String]] = []
     @State var showErrorAlert: Bool = false
     @State private var resetGame: Bool = false
     
@@ -51,18 +52,25 @@ struct WordleView: View{
                 resetGame = false
             }
         }
-        .alert(isPresented: $game.gameOver){
-            Alert(
-                title: Text("Game Over"),
-                message: Text("Would you like to play again?"),
-                primaryButton: .default(Text("Restart"), action:{
+        .onChange(of: game.gameOver) { newValue in
+            if newValue{
+                shareImageTiles = createShareImage()
+            }
+        }
+        .sheet(isPresented: $game.gameOver){
+            VStack{
+                GameOverSheetView(shareImageTiles: $shareImageTiles)
+                
+                Button("Play Again?") {
                     game.resetGame()
                     resetUI()
                     
                 }
-                                       ),
-                secondaryButton: .cancel()
-            )
+                
+            }
+            
+            
+            
         }
         
         
@@ -81,10 +89,8 @@ struct WordleView: View{
         }
         
         guessResults[currentRow] = game.guess(word: guessWord)
-        
-        
-        // use guessResult to update UI
-        print("Guessed: \(guessWord), Result: \(guessResults[currentRow])")
+//        print("Guessed: \(guessWord), Result: \(guessResults[currentRow])")
+//        print(guessResults)
         
         if !game.isGameOver{
             currentRow += 1
@@ -97,7 +103,7 @@ struct WordleView: View{
             return
         }
         rows[currentRow][index] = input
-//        print("Characters: \(rows[currentRow])")
+        //        print("Characters: \(rows[currentRow])")
         
         currentInput = ""
     }
@@ -117,8 +123,40 @@ struct WordleView: View{
         currentRow = 0
         rows = Array(repeating: Array(repeating: "", count: 5), count: 5)
         for index in guessResults.indices {
-                guessResults[index] = startingPosition
+            guessResults[index] = startingPosition
+        }
+    }
+    
+    private func createShareImage() -> [[String]]{
+        enum Squares: String{
+            case green = "🟩"
+            case yellow = "🟨"
+            case gray = "⬜️"
+        }
+        
+        var tiles = Array(repeating: Array(repeating: Squares.gray.rawValue, count: 5), count: 5)
+        for i in 0..<guessResults.count{
+            for j in 0..<guessResults[i].count {
+                // create a row of tiles
+                let character = guessResults[i][j]
+                if character == "G"{
+                    tiles[i][j] = Squares.green.rawValue
+                }
+                else if character == "Y"{
+                    tiles[i][j] = Squares.yellow.rawValue
+                }
+                else if character == "R"{
+                    tiles[i][j] = Squares.yellow.rawValue
+                }
+                else if character == "U"{
+                    tiles[i][j] = ""
+                }
+                
             }
+        }
+        print(tiles)
+        return tiles
+        
     }
 }
 
